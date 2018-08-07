@@ -187,6 +187,7 @@ autocmd FileType xml set omnifunc=xmlcomplete#CompleteTags
 "autocmd FileType php set omnifunc=phpcomplete#CompletePHP
 autocmd FileType c set omnifunc=ccomplete#Complete
 
+let g:NERDTreeShowHidden=1
 
 "把omni补全设置成tab键
 let g:SuperTabDefaultCompletionType="<C-X><C-O>" 
@@ -243,5 +244,8 @@ let g:closetag_shortcut = '>'
 let g:closetag_close_shortcut = '<leader>>'
 
 let g:syntastic_javascript_checkers = ['eslint']
+
+"自动删除行尾空格
+autocmd FileType c,cc,cpp,python,ruby,java,sh,html,javascript autocmd BufWritePre <buffer> :%s/\s\+$//e
 
 filetype plugin indent on    " required
